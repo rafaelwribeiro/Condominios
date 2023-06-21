@@ -1,5 +1,5 @@
 using Backend.Application.Contracts;
-using Backend.Domain.Entities;
+using Backend.Application.Exceptions;
 using Backend.Domain.Repositories;
 using Mapster;
 using MediatR;
@@ -18,6 +18,9 @@ public class GetCityCommandHandler : IRequestHandler<GetCityCommand, GetCityComm
     public async Task<GetCityCommandResult> Handle(GetCityCommand request, CancellationToken cancellationToken)
     {
         var city = await _cityRepository.GetAsync(request.Id);
+
+        if(city == null)
+            throw new NotFoundException();
 
         var result = new GetCityCommandResult();
         result.City = city.Adapt<ReadCityContract>();

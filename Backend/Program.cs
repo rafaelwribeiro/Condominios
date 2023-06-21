@@ -1,4 +1,5 @@
 using System.Reflection;
+using Backend.Api.Middlewares;
 using Backend.Domain.Repositories;
 using Backend.Infra.Data.EFCore;
 using Backend.Infra.Data.EFCore.Repositories;
@@ -29,6 +30,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware(typeof(ErrorMiddleware));
 
 app.UseHttpsRedirection();
 
