@@ -4,5 +4,5 @@ namespace Backend.Application.Commands.AddCity;
 
 public class AddCityCommandResult
 {
-    public ReadCityContract City { get; set; }
+    public ReadCityContract? City { get; set; }
 }

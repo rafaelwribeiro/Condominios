@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace Backend.Domain.Entities;
 
 public class Building
@@ -8,8 +6,8 @@ public class Building
     public string Name { get; set; } = "";
     public int Floors { get; set; }
     public int CityId { get; set; }
-    public City City { get; set; }
-    public IList<Apartament> Apartaments { get; set; } = new List<Apartament>();
+    public City? City { get; set; }
+    public IList<Apartment> Apartaments { get; set; } = new List<Apartment>();
 
-    public void AddApartament(Apartament app) => Apartaments.Add(app);
+    public void AddApartament(Apartment app) => Apartaments.Add(app);
 }
