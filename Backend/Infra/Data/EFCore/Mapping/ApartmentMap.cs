@@ -21,5 +21,9 @@ public class ApartmentMap : IEntityTypeConfiguration<Apartment>
         builder
             .Property(a => a.BadroomsQuantity)
             .HasColumnName("NUMERO_QUARTOS");
+
+        builder.HasMany(a => a.Payments)
+            .WithOne(a => a.Apartment)
+            .HasForeignKey(a => a.ApartamentId);
     }
 }

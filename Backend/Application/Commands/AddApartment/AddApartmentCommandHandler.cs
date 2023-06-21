@@ -1,4 +1,7 @@
+using Backend.Application.Contracts;
+using Backend.Domain.Entities;
 using Backend.Domain.Repositories;
+using Mapster;
 using MediatR;
 
 namespace Backend.Application.Commands.AddApartment;
@@ -15,8 +18,10 @@ public class AddApartmentCommandHandler : IRequestHandler<AddApartmentCommand, A
     public async Task<AddApartmentCommandResult> Handle(AddApartmentCommand request, CancellationToken cancellationToken)
     {
 
+        var entity = request.Contract.Adapt<Apartment>();
+        var building = await _apartmentRepository.AddAsync(entity);
         var result = new AddApartmentCommandResult();
-        
+        result.Apartment = building.Adapt<ReadApartmentContract>();
         return result;
     }
 }

@@ -8,5 +8,5 @@ public interface IApartmentRepository
     public Task RemoveAsync(Apartment apartment);
     public Task UpdateAsync(Apartment apartment);
     public Task<Apartment?> GetAsync(int id);
-    public Task<IEnumerable<Apartment>> GetAllAsync();
+    public Task<IEnumerable<Apartment>> GetAllAsync(int buildingId);
 }

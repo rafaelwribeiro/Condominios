@@ -4,5 +4,5 @@ namespace Backend.Application.Commands.AddApartment;
 
 public class AddApartmentCommandResult
 {
-    public ReadApartmentContract? City { get; set; }
+    public ReadApartmentContract? Apartment { get; set; }
 }

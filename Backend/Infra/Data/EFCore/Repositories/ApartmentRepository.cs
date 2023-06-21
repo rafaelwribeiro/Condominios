@@ -1,5 +1,6 @@
 using Backend.Domain.Entities;
 using Backend.Domain.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Infra.Data.EFCore.Repositories;
 
@@ -10,28 +11,41 @@ public class ApartmentRepository : IApartmentRepository
     public ApartmentRepository(EFDbContext dbContext)
         => _dbContext = dbContext;
 
-    public Task<Apartment> AddAsync(Apartment apartment)
+    public async Task<Apartment> AddAsync(Apartment apartment)
     {
-        throw new NotImplementedException();
+        await _dbContext.Apartaments.AddAsync(apartment);
+        await _dbContext.SaveChangesAsync();
+        return apartment;
     }
 
-    public Task<IEnumerable<Apartment>> GetAllAsync()
+    public async Task<IEnumerable<Apartment>> GetAllAsync(int buildingId)
     {
-        throw new NotImplementedException();
+        return await _dbContext
+            .Apartaments
+            .Include(a => a.Building)
+            .Where(a => a.BuildingId == buildingId)
+            .AsNoTracking()
+            .ToListAsync();
     }
 
-    public Task<Apartment?> GetAsync(int id)
+    public async Task<Apartment?> GetAsync(int id)
     {
-        throw new NotImplementedException();
+        return await _dbContext
+            .Apartaments
+            .Include(b => b.Building)
+            .Where(c => c.Id == id)
+            .FirstOrDefaultAsync();
     }
 
-    public Task RemoveAsync(Apartment apartment)
+    public async Task RemoveAsync(Apartment apartment)
     {
-        throw new NotImplementedException();
+        _dbContext.Apartaments.Remove(apartment);
+        await _dbContext.SaveChangesAsync();
     }
 
-    public Task UpdateAsync(Apartment apartment)
+    public async Task UpdateAsync(Apartment apartment)
     {
-        throw new NotImplementedException();
+        _dbContext.Apartaments.Update(apartment);
+        await _dbContext.SaveChangesAsync();
     }
 }
