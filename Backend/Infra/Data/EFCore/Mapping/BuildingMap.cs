@@ -21,6 +21,10 @@ public class BuildingMap : IEntityTypeConfiguration<Building>
             .HasColumnName("ANDARES");
         
         builder
+            .Property(b => b.CityId)
+            .HasColumnName("CODIGO_CIDADE");
+
+        builder
             .HasOne(b => b.City);
 
         builder.HasMany(b => b.Apartaments)

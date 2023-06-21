@@ -21,6 +21,8 @@ builder.Services.AddDbContext<EFDbContext>(
 );
 
 builder.Services.AddScoped<ICityRepository, CityRepository>();
+builder.Services.AddScoped<IBuildingRepository, BuildingRepository>();
+builder.Services.AddScoped<IApartmentRepository, ApartmentRepository>();
 
 var app = builder.Build();
 

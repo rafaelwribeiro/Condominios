@@ -32,7 +32,7 @@ public class CitiesController : ControllerBase
     public async Task<IActionResult> GetAll()
     {
         var list = await _mediator.Send(new ListCitiesCommand());
-        return Ok(list);
+        return Ok(list.Cities);
     }
 
     [HttpPost]

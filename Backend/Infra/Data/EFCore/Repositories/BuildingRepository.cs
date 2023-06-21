@@ -1,5 +1,6 @@
 using Backend.Domain.Entities;
 using Backend.Domain.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Infra.Data.EFCore.Repositories;
 
@@ -10,28 +11,40 @@ public class BuildingRepository : IBuildingRepository
     public BuildingRepository(EFDbContext dbContext)
         => _dbContext = dbContext;
 
-    public Task<Building> AddAsync(Building building)
+    public async Task<Building> AddAsync(Building building)
     {
-        throw new NotImplementedException();
+        await _dbContext.Buildings.AddAsync(building);
+        await _dbContext.SaveChangesAsync();
+        return building;
     }
 
-    public Task<IEnumerable<Building>> GetAllAsync()
+    public async Task<IEnumerable<Building>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        return await _dbContext
+            .Buildings
+            .Include(b => b.City)
+            .AsNoTracking()
+            .ToListAsync();
     }
 
-    public Task<Building?> GetAsync(int id)
+    public async Task<Building?> GetAsync(int id)
     {
-        throw new NotImplementedException();
+        return await _dbContext
+            .Buildings
+            .Include(b => b.City)
+            .Where(c => c.Id == id)
+            .FirstOrDefaultAsync();
     }
 
-    public Task RemoveAsync(Building building)
+    public async Task RemoveAsync(Building building)
     {
-        throw new NotImplementedException();
+        _dbContext.Buildings.Remove(building);
+        await _dbContext.SaveChangesAsync();
     }
 
-    public Task UpdateAsync(Building building)
+    public async Task UpdateAsync(Building building)
     {
-        throw new NotImplementedException();
+        _dbContext.Buildings.Update(building);
+        await _dbContext.SaveChangesAsync();
     }
 }
