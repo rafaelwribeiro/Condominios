@@ -1,0 +1,19 @@
+- Domain
+  - Entities
+  - Repositories (interfaces)
+
+- Application
+  - DTOs
+  - Commands
+  - Services
+
+- Infra
+  -Data
+    - Repositories
+
+- Api
+  - Controllers
+  - Middlewares
+
+
+Domain
