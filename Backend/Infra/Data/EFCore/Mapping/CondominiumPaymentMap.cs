@@ -16,7 +16,8 @@ public class CondominiumPaymentMap : IEntityTypeConfiguration<CondominiumPayment
             .HasColumnName("DATA_PAGAMENTO");
 
         builder.Property(c => c.Value)
-            .HasColumnName("VALOR_PAGAMENTO");
+            .HasColumnName("VALOR_PAGAMENTO")
+            .HasColumnType("DECIMAL(18,2)");
 
         builder.HasOne(c => c.Apartment);
     }
