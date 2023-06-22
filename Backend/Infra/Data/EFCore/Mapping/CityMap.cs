@@ -8,7 +8,7 @@ public class CityMap : IEntityTypeConfiguration<City>
 {
     public void Configure(EntityTypeBuilder<City> builder)
     {
-        builder.ToTable("tbl_cidade")
+        builder.ToTable("TABELA_CIDADE")
             .Property(c => c.Id)
             .HasColumnName("CODIGO_CIDADE");
         

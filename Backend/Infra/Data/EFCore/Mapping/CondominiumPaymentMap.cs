@@ -8,12 +8,12 @@ public class CondominiumPaymentMap : IEntityTypeConfiguration<CondominiumPayment
 {
     public void Configure(EntityTypeBuilder<CondominiumPayment> builder)
     {
-        builder.ToTable("tbl_pagamentos_condominios")
+        builder.ToTable("TABELA_PAGAMENTOS_CONDOMINIO")
             .Property(c => c.Id)
             .HasColumnName("CODIGO_CONDOMINIO");
         
         builder.Property(c => c.CreatedAt)
-            .HasColumnName("DATA");
+            .HasColumnName("DATA_PAGAMENTO");
 
         builder.Property(c => c.Value)
             .HasColumnName("VALOR_PAGAMENTO");

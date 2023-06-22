@@ -8,7 +8,7 @@ public class BuildingMap : IEntityTypeConfiguration<Building>
 {
     public void Configure(EntityTypeBuilder<Building> builder)
     {
-        builder.ToTable("tbl_edificio")
+        builder.ToTable("TABELA_EDIFICIO")
             .Property(b => b.Id)
             .HasColumnName("CODIGO_EDIFICIO");
         
