@@ -64,15 +64,10 @@ namespace DesktopAPP.View.Buildings
         private async void txtCityId_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar != (char)Keys.Enter) return;
-            var cityId = Convert.ToInt32(txtCityId.Text);
+            var cityId = Convert.ToInt32("0"+txtCityId.Text);
             var city = await GetCity(cityId);
             if (city == null) return;
             FillCityFields(city);
-        }
-
-        private async void txtCityId_TextChanged(object sender, EventArgs e)
-        {
-            
         }
 
         private async Task<CityModel> GetCity(int cityId)

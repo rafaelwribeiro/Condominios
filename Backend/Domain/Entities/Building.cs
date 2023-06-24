@@ -7,7 +7,7 @@ public class Building
     public int Floors { get; set; }
     public int CityId { get; set; }
     public City? City { get; set; }
-    public IList<Apartment> Apartaments { get; set; } = new List<Apartment>();
+    public IList<Apartment> Apartments { get; set; } = new List<Apartment>();
 
-    public void AddApartament(Apartment app) => Apartaments.Add(app);
+    public void AddApartament(Apartment app) => Apartments.Add(app);
 }

@@ -45,13 +45,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtCityName = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.txtCityId = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.txtCityId = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.txtFloors)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPageApartamentos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCityId)).BeginInit();
             this.SuspendLayout();
             // 
             // txtName
@@ -209,16 +210,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // txtCityId
-            // 
-            this.txtCityId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCityId.Location = new System.Drawing.Point(16, 82);
-            this.txtCityId.Name = "txtCityId";
-            this.txtCityId.Size = new System.Drawing.Size(75, 26);
-            this.txtCityId.TabIndex = 14;
-            this.txtCityId.TextChanged += new System.EventHandler(this.txtCityId_TextChanged);
-            this.txtCityId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCityId_KeyPress);
-            // 
             // btnSearch
             // 
             this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
@@ -241,15 +232,26 @@
             this.btnSave.Text = "Salvar";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
+            // txtCityId
+            // 
+            this.txtCityId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCityId.BackColor = System.Drawing.SystemColors.Window;
+            this.txtCityId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.txtCityId.Location = new System.Drawing.Point(16, 83);
+            this.txtCityId.Name = "txtCityId";
+            this.txtCityId.Size = new System.Drawing.Size(75, 26);
+            this.txtCityId.TabIndex = 17;
+            this.txtCityId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCityId_KeyPress);
+            // 
             // EditBuildingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(873, 464);
+            this.Controls.Add(this.txtCityId);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.txtCityId);
             this.Controls.Add(this.txtCityName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tabControl1);
@@ -270,6 +272,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPageApartamentos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCityId)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -292,8 +295,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCityName;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.TextBox txtCityId;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.NumericUpDown txtCityId;
     }
 }

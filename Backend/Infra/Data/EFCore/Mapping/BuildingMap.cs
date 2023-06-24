@@ -27,7 +27,7 @@ public class BuildingMap : IEntityTypeConfiguration<Building>
         builder
             .HasOne(b => b.City);
 
-        builder.HasMany(b => b.Apartaments)
+        builder.HasMany(b => b.Apartments)
             .WithOne(a => a.Building)
             .HasForeignKey(a => a.BuildingId);
     }

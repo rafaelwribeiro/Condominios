@@ -23,6 +23,7 @@ public class BuildingRepository : IBuildingRepository
         return await _dbContext
             .Buildings
             .Include(b => b.City)
+            .Include(b => b.Apartments)
             .AsNoTracking()
             .ToListAsync();
     }
@@ -32,6 +33,7 @@ public class BuildingRepository : IBuildingRepository
         return await _dbContext
             .Buildings
             .Include(b => b.City)
+            .Include(b => b.Apartments)
             .Where(c => c.Id == id)
             .FirstOrDefaultAsync();
     }
