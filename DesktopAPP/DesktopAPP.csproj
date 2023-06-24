@@ -55,7 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\City.cs" />
+    <Compile Include="Model\CityModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CityService.cs" />
@@ -67,8 +67,11 @@
     <Compile Include="View\City\CityForm.Designer.cs">
       <DependentUpon>CityForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\City\CityPanel.cs">
-      <SubType>Component</SubType>
+    <Compile Include="View\City\EditCityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\City\EditCityForm.Designer.cs">
+      <DependentUpon>EditCityForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>
@@ -88,6 +91,9 @@
     </Compile>
     <EmbeddedResource Include="View\City\CityForm.resx">
       <DependentUpon>CityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\City\EditCityForm.resx">
+      <DependentUpon>EditCityForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

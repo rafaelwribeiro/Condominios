@@ -1,49 +1,58 @@
 ﻿using DesktopAPP.View.City;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DesktopAPP.View
 {
     public partial class MainForm : Form
     {
-        private CityPanel cityPanel;
+        private Form currentChieldForm;
         public MainForm()
         {
             InitializeComponent();
-            cityPanel = new CityPanel();
+            pnlMasterContainer.BringToFront();
         }
 
-        private void cidadesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void OpenChiledForm(Form childForm)
         {
-            //CityTabPage customTabPage = new CityTabPage("Tab Personalizada");
-            //tabControl.TabPages.Add(customTabPage);
-            //HideAllPanels();
+            currentChieldForm?.Close();
+            currentChieldForm = childForm;
 
-            //pnlContainer.Controls.Add(cityPanel);
-            var cityForm = new CityForm();
-            cityForm.MdiParent= this;
-            cityForm.Show();
-
-
+            childForm.TopLevel= false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnlBody.Controls.Add(childForm);
+            pnlBody.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            lblTitle.Text = childForm.Text;
         }
 
-        private void HideAllPanels()
+        private void Reset()
         {
-            /*foreach (Control control in pnlContainer.Controls)
-                if (control is Panel)
-                    pnlContainer.Controls.Remove(control);*/
+            lblTitle.Text = "Home";
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            Reset();
+        }
+
+        private void btnCities_Click(object sender, EventArgs e)
+        {
+            OpenChiledForm(new CityForm());
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            currentChieldForm?.Close();
+            Reset();
         }
     }
 }
