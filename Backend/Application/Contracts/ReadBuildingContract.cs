@@ -7,5 +7,5 @@ public class ReadBuildingContract
     public int Floors { get; set; }
     public int CityId { get; set; }
     public ReadCityContract? City { get; set; }
-    public IList<ReadApartmentContract> Apartments { get ; set; }
+    public IEnumerable<ReadApartmentContract> Apartments { get ; set; } = Enumerable.Empty<ReadApartmentContract>();
 }

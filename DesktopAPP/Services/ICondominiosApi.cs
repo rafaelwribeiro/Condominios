@@ -31,7 +31,7 @@ namespace DesktopAPP.Services
         [Post("/buildings")]
         Task<BuildingModel> PostBuildingAsync(BuildingModel building);
 
-        [Put("/buildibuildingsng")]
+        [Put("/buildings")]
         Task UpdateBuildingAsync(BuildingModel building);
 
         [Delete("/buildings/{id}")]

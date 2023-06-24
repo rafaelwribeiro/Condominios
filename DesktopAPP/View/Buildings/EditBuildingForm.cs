@@ -79,5 +79,21 @@ namespace DesktopAPP.View.Buildings
         {
 
         }
+
+        private async void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (IsInsert)
+                    await buildingService.Post(building);
+                else
+                    await buildingService.Update(building);
+                this.Close();
+                this.DialogResult = DialogResult.OK;
+            } catch (Exception ex)
+            {
+                MessageBox.Show($"Falha ao salvar dados do Edifício.\n{ex.Message}\n{ex.InnerException}");
+            }
+        }
     }
 }

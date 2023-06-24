@@ -81,7 +81,7 @@ namespace DesktopAPP.View.City
         {
             int id = GetIdSelectedRow();
             if(id<=0) return;
-            DialogResult result = MessageBox.Show("Você excluir o registro selecionado?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Deseja excluir o registro selecionado?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.No)
                 return;
