@@ -40,8 +40,7 @@ namespace DesktopAPP.View.City
                 .ForEach(city => {
                     dataGridView.Rows.Add(city.Id, city.Name, city.State);
                 }
-            );
-            
+            );            
         }
 
         private async Task<IList<CityModel>> GetCities()

@@ -25,23 +25,23 @@ namespace DesktopAPP.Services
 
         public async Task<IList<CityModel>> GetAll()
         {
-            var cities = await api.GetAllAsync();
+            var cities = await api.GetAllCitiesAsync();
             return cities;
         }
 
         public async Task<CityModel> Post(CityModel city)
         { 
-            return await api.PostAsync(city);
+            return await api.PostCityAsync(city);
         }
 
         public async Task Update(CityModel city)
         {
-            await api.UpdateAsync(city);
+            await api.UpdateCityAsync(city);
         }
 
         public async Task Delete(int id)
         {
-            await api.DeleteAsync(id);
+            await api.DeleteCityAsync(id);
         }
     }
 }

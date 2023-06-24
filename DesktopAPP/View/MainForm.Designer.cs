@@ -31,21 +31,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.pnlMasterContainer = new System.Windows.Forms.Panel();
             this.pnlBody = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnBuilding = new System.Windows.Forms.Button();
+            this.btnCities = new System.Windows.Forms.Button();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnCities = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnBuilding = new System.Windows.Forms.Button();
             this.pnlMasterContainer.SuspendLayout();
             this.pnlBody.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlHeader.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMasterContainer
@@ -67,6 +67,17 @@
             this.pnlBody.Name = "pnlBody";
             this.pnlBody.Size = new System.Drawing.Size(695, 549);
             this.pnlBody.TabIndex = 1;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(245, 198);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(222, 138);
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
             // pnlHeader
             // 
@@ -102,6 +113,40 @@
             this.pnlMenu.Size = new System.Drawing.Size(220, 594);
             this.pnlMenu.TabIndex = 4;
             // 
+            // btnBuilding
+            // 
+            this.btnBuilding.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBuilding.FlatAppearance.BorderSize = 0;
+            this.btnBuilding.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuilding.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuilding.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnBuilding.Location = new System.Drawing.Point(0, 190);
+            this.btnBuilding.Name = "btnBuilding";
+            this.btnBuilding.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnBuilding.Size = new System.Drawing.Size(220, 50);
+            this.btnBuilding.TabIndex = 2;
+            this.btnBuilding.Text = "Edificios";
+            this.btnBuilding.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuilding.UseVisualStyleBackColor = true;
+            this.btnBuilding.Click += new System.EventHandler(this.btnBuilding_Click);
+            // 
+            // btnCities
+            // 
+            this.btnCities.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCities.FlatAppearance.BorderSize = 0;
+            this.btnCities.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCities.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCities.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCities.Location = new System.Drawing.Point(0, 140);
+            this.btnCities.Name = "btnCities";
+            this.btnCities.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnCities.Size = new System.Drawing.Size(220, 50);
+            this.btnCities.TabIndex = 1;
+            this.btnCities.Text = "Cidades";
+            this.btnCities.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCities.UseVisualStyleBackColor = true;
+            this.btnCities.Click += new System.EventHandler(this.btnCities_Click);
+            // 
             // pnlLogo
             // 
             this.pnlLogo.Controls.Add(this.pictureBox1);
@@ -122,50 +167,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // btnCities
-            // 
-            this.btnCities.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCities.FlatAppearance.BorderSize = 0;
-            this.btnCities.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCities.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCities.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCities.Location = new System.Drawing.Point(0, 140);
-            this.btnCities.Name = "btnCities";
-            this.btnCities.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnCities.Size = new System.Drawing.Size(220, 50);
-            this.btnCities.TabIndex = 1;
-            this.btnCities.Text = "Cidades";
-            this.btnCities.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCities.UseVisualStyleBackColor = true;
-            this.btnCities.Click += new System.EventHandler(this.btnCities_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(245, 198);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(222, 138);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btnBuilding
-            // 
-            this.btnBuilding.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnBuilding.FlatAppearance.BorderSize = 0;
-            this.btnBuilding.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuilding.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuilding.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBuilding.Location = new System.Drawing.Point(0, 190);
-            this.btnBuilding.Name = "btnBuilding";
-            this.btnBuilding.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnBuilding.Size = new System.Drawing.Size(220, 50);
-            this.btnBuilding.TabIndex = 2;
-            this.btnBuilding.Text = "Edificios";
-            this.btnBuilding.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuilding.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,12 +182,12 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.pnlMasterContainer.ResumeLayout(false);
             this.pnlBody.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             this.pnlMenu.ResumeLayout(false);
             this.pnlLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

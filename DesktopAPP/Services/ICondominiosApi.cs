@@ -8,14 +8,30 @@ namespace DesktopAPP.Services
 {
     public interface ICondominiosApi
     {
+        //Cities
         [Get("/cities")]
-        Task<IList<CityModel>> GetAllAsync();
+        Task<IList<CityModel>> GetAllCitiesAsync();
 
         [Post("/cities")]
-        Task<CityModel> PostAsync(CityModel city);
+        Task<CityModel> PostCityAsync(CityModel city);
+
         [Put("/cities")]
-        Task UpdateAsync(CityModel city);
+        Task UpdateCityAsync(CityModel city);
+
         [Delete("/cities/{id}")]
-        Task DeleteAsync(int id);
+        Task DeleteCityAsync(int id);
+
+        //Buildings
+        [Get("/buildings")]
+        Task<IList<BuildingModel>> GetAllBuildingsAsync();
+
+        [Post("/buildings")]
+        Task<BuildingModel> PostBuildingAsync(BuildingModel building);
+
+        [Put("/buildibuildingsng")]
+        Task UpdateBuildingAsync(BuildingModel building);
+
+        [Delete("/buildings/{id}")]
+        Task DeleteBuildingAsync(int id);
     }
 }

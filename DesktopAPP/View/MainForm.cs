@@ -1,4 +1,5 @@
-﻿using DesktopAPP.View.City;
+﻿using DesktopAPP.View.Buildings;
+using DesktopAPP.View.City;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -44,15 +45,20 @@ namespace DesktopAPP.View
             Reset();
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            currentChieldForm?.Close();
+            Reset();
+        }
+
         private void btnCities_Click(object sender, EventArgs e)
         {
             OpenChiledForm(new CityForm());
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void btnBuilding_Click(object sender, EventArgs e)
         {
-            currentChieldForm?.Close();
-            Reset();
+            OpenChiledForm(new BuildingForm());
         }
     }
 }
