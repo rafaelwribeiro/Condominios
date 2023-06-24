@@ -1,13 +1,32 @@
-﻿using System;
+﻿using DesktopAPP.Model;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace DesktopAPP.Services
 {
     public class CityService
     {
-        public int MyProperty { get; set; }
+        private static CityService instance;
+        private readonly ICondominiosApi api;
+
+        private CityService()
+        {
+            api = CondominiosApiFactory.GetApi();
+        }
+
+        public static CityService GetInstance()
+        {
+            if(instance == null)
+                instance = new CityService();
+            return instance;
+        }
+
+
+        public async Task<IList<City>> GetAll()
+        {
+            var cities = await api.GetAllAsync();
+            return cities;
+        }
     }
 }

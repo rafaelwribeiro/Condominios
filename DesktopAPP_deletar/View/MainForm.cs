@@ -24,21 +24,22 @@ namespace DesktopAPP.View
         {
             //CityTabPage customTabPage = new CityTabPage("Tab Personalizada");
             //tabControl.TabPages.Add(customTabPage);
-            //HideAllPanels();
-
-            //pnlContainer.Controls.Add(cityPanel);
-            var cityForm = new CityForm();
-            cityForm.MdiParent= this;
-            cityForm.Show();
-
+            HideAllPanels();
+            
+            pnlContainer.Controls.Add(cityPanel);
 
         }
 
         private void HideAllPanels()
         {
-            /*foreach (Control control in pnlContainer.Controls)
+            foreach (Control control in pnlContainer.Controls)
+            {
                 if (control is Panel)
-                    pnlContainer.Controls.Remove(control);*/
+                {
+                    pnlContainer.Controls.Remove(control);
+                    //control.Dispose();
+                }
+            }
         }
 
         private void tabPage1_Click(object sender, EventArgs e)

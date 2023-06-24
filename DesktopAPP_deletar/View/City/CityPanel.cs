@@ -1,5 +1,4 @@
-﻿using DesktopAPP.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
@@ -12,15 +11,12 @@ namespace DesktopAPP.View.City
 {
     public class CityPanel : Panel
     {
-        private CityService cityService;
         private Button button;
         private DataGridView dataGridView;
         private Panel topPanel;
 
         public CityPanel()
         {
-            cityService = CityService.GetInstance();
-
             string tabName = "aaa";
             // Configurações de estilo e texto da TabPage
             this.Text = tabName;
@@ -51,7 +47,14 @@ namespace DesktopAPP.View.City
             dataGridView.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom;
             dataGridView.ColumnWidthChanged += DataGridView_ColumnWidthChanged;
 
+            // Define as colunas do DataGridView
+            /*dataGridView.Columns.Add("Id", "Código");
+            dataGridView.Columns.Add("Column2", "Nome");
+            dataGridView.Columns.Add("Column3", "UF");*/
+
+            // Adiciona o DataGridView ao Panel
             this.Controls.Add(dataGridView);
+
             this.BringToFront();
 
 
@@ -59,7 +62,7 @@ namespace DesktopAPP.View.City
 
         }
 
-        private async Task PopulateGrid()
+        private void PopulateGrid()
         {
 
             DataTable dataTable = new DataTable();
@@ -69,11 +72,16 @@ namespace DesktopAPP.View.City
 
             dataGridView.DataSource = dataTable;
 
-            var cidades = await cityService.GetAll();
-
-            foreach (var city in cidades)
+            var cidades = new List<Cidade>
             {
-                dataTable.Rows.Add(city.Id, city.Name, city.State);
+                new Cidade { Id = 1, Nome = "São Paulo", UF = "SP" },
+                new Cidade { Id = 2, Nome = "Rio de Janeiro", UF = "RJ" },
+                new Cidade { Id = 3, Nome = "Belo Horizonte", UF = "MG" }
+            };
+
+            foreach (Cidade cidade in cidades)
+            {
+                dataTable.Rows.Add(cidade.Id, cidade.Nome, cidade.UF);
             }
         }
 
@@ -104,5 +112,12 @@ namespace DesktopAPP.View.City
             if (e.Control != this) return;
             MessageBox.Show("oi");
         }
+    }
+
+    public class Cidade
+    {
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public string UF { get; set; }
     }
 }
