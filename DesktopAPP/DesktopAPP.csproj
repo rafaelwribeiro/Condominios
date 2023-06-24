@@ -69,11 +69,23 @@
     <Compile Include="View\Buildings\BuildingForm.Designer.cs">
       <DependentUpon>BuildingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Buildings\EditBuildingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Buildings\EditBuildingForm.Designer.cs">
+      <DependentUpon>EditBuildingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\City\CityForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\City\CityForm.Designer.cs">
       <DependentUpon>CityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\City\CitySearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\City\CitySearchForm.Designer.cs">
+      <DependentUpon>CitySearchForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\City\EditCityForm.cs">
       <SubType>Form</SubType>
@@ -100,8 +112,14 @@
     <EmbeddedResource Include="View\Buildings\BuildingForm.resx">
       <DependentUpon>BuildingForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Buildings\EditBuildingForm.resx">
+      <DependentUpon>EditBuildingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\City\CityForm.resx">
       <DependentUpon>CityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\City\CitySearchForm.resx">
+      <DependentUpon>CitySearchForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\City\EditCityForm.resx">
       <DependentUpon>EditCityForm.cs</DependentUpon>

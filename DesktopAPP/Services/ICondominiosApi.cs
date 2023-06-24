@@ -12,6 +12,9 @@ namespace DesktopAPP.Services
         [Get("/cities")]
         Task<IList<CityModel>> GetAllCitiesAsync();
 
+        [Get("/cities/{id}")]
+        Task<CityModel> GetCityAsync(int id);
+
         [Post("/cities")]
         Task<CityModel> PostCityAsync(CityModel city);
 
@@ -33,5 +36,6 @@ namespace DesktopAPP.Services
 
         [Delete("/buildings/{id}")]
         Task DeleteBuildingAsync(int id);
+        
     }
 }

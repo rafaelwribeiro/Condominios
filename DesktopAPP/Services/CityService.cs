@@ -43,5 +43,16 @@ namespace DesktopAPP.Services
         {
             await api.DeleteCityAsync(id);
         }
+
+        public async Task<CityModel> GetCityAsync(int id)
+        {
+            try
+            {
+                return await api.GetCityAsync(id);
+            } catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }
