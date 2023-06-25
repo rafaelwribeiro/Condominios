@@ -6,6 +6,7 @@ public class Apartment
     public int BuildingId { get; set; }
     public Building? Building { get; set; }
     public int Floor { get; set; }
+    public decimal SizeM2 { get; set; }
     public int BadroomsQuantity { get; set; }
     public IList<CondominiumPayment> Payments { get; set; } = Enumerable.Empty<CondominiumPayment>().ToList();
 }

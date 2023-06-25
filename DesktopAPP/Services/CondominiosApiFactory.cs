@@ -11,7 +11,8 @@ namespace DesktopAPP.Services
     {
         public static ICondominiosApi GetApi()
         {
-            return RestService.For<ICondominiosApi>("http://localhost:5106");
+            var api = Configuration.GetInstance().GetApiPath();
+            return RestService.For<ICondominiosApi>(api);
         }
     }
 }

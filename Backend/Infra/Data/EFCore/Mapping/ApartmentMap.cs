@@ -23,6 +23,11 @@ public class ApartmentMap : IEntityTypeConfiguration<Apartment>
             .HasColumnName("NUMERO_QUARTOS");
 
         builder
+            .Property(a => a.SizeM2)
+            .HasColumnName("METRAGEM")
+            .HasColumnType("DECIMAL(18,2)");
+
+        builder
             .Property(a => a.BuildingId)
             .HasColumnName("CODIGO_EDIFICIO");
 

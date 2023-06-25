@@ -76,7 +76,7 @@ namespace DesktopAPP.View.Buildings
             dataGridView.Rows.Clear();
 
             apartments.ToList().ForEach(x => {
-                dataGridView.Rows.Add(x.Id, x.Floor, x.BadroomsQuantity);
+                dataGridView.Rows.Add(x.Id, x.Floor, x.BadroomsQuantity, x.SizeM2);
             });
         }
 

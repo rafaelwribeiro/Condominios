@@ -45,6 +45,7 @@ namespace DesktopAPP.View.Apartment
             txtId.DataBindings.Add("Text", apartment, "Id");
             txtFloor.DataBindings.Add("Text", apartment, "Floor");
             txtBadroomsQuantity.DataBindings.Add("Text", apartment, "BadroomsQuantity");
+            txtSizeM2.DataBindings.Add("Text", apartment, "SizeM2");
         }
     }
 }

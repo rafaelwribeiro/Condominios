@@ -35,8 +35,11 @@
             this.txtFloor = new System.Windows.Forms.NumericUpDown();
             this.txtBadroomsQuantity = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtSizeM2 = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txtFloor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBadroomsQuantity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSizeM2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
@@ -93,6 +96,11 @@
             this.txtBadroomsQuantity.BackColor = System.Drawing.SystemColors.Window;
             this.txtBadroomsQuantity.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.txtBadroomsQuantity.Location = new System.Drawing.Point(178, 31);
+            this.txtBadroomsQuantity.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
             this.txtBadroomsQuantity.Name = "txtBadroomsQuantity";
             this.txtBadroomsQuantity.Size = new System.Drawing.Size(179, 26);
             this.txtBadroomsQuantity.TabIndex = 15;
@@ -107,12 +115,39 @@
             this.label3.TabIndex = 16;
             this.label3.Text = "Quantidade de quartos";
             // 
+            // txtSizeM2
+            // 
+            this.txtSizeM2.BackColor = System.Drawing.SystemColors.Window;
+            this.txtSizeM2.DecimalPlaces = 2;
+            this.txtSizeM2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.txtSizeM2.Location = new System.Drawing.Point(363, 31);
+            this.txtSizeM2.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.txtSizeM2.Name = "txtSizeM2";
+            this.txtSizeM2.Size = new System.Drawing.Size(136, 26);
+            this.txtSizeM2.TabIndex = 17;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(363, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(117, 19);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Metragem (m²)";
+            // 
             // EditApartmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(370, 94);
+            this.ClientSize = new System.Drawing.Size(511, 94);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtSizeM2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtBadroomsQuantity);
             this.Controls.Add(this.txtFloor);
@@ -129,6 +164,7 @@
             this.Load += new System.EventHandler(this.EditApartmentForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtFloor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBadroomsQuantity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSizeM2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,5 +178,7 @@
         private System.Windows.Forms.NumericUpDown txtBadroomsQuantity;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown txtFloor;
+        private System.Windows.Forms.NumericUpDown txtSizeM2;
+        private System.Windows.Forms.Label label4;
     }
 }

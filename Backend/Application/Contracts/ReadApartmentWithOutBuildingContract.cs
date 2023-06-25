@@ -6,4 +6,5 @@ public class ReadApartmentWithOutBuildingContract
     public int Floor { get; set; }
     public int BadroomsQuantity { get; set; }
     public int BuildingId { get; set; }
+    public decimal SizeM2 { get; set; }
 }

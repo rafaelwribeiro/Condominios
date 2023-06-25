@@ -42,6 +42,7 @@
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Floor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BadroomsQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SizeM2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnEdit = new System.Windows.Forms.LinkLabel();
             this.btnDelete = new System.Windows.Forms.LinkLabel();
@@ -107,6 +108,11 @@
             this.txtFloors.BackColor = System.Drawing.SystemColors.Window;
             this.txtFloors.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.txtFloors.Location = new System.Drawing.Point(382, 32);
+            this.txtFloors.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
             this.txtFloors.Name = "txtFloors";
             this.txtFloors.Size = new System.Drawing.Size(75, 26);
             this.txtFloors.TabIndex = 3;
@@ -156,7 +162,8 @@
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Floor,
-            this.BadroomsQuantity});
+            this.BadroomsQuantity,
+            this.SizeM2});
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView.Location = new System.Drawing.Point(3, 19);
             this.dataGridView.Name = "dataGridView";
@@ -186,12 +193,18 @@
             // 
             // BadroomsQuantity
             // 
-            this.BadroomsQuantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.BadroomsQuantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.BadroomsQuantity.HeaderText = "Quantidade de quartos";
             this.BadroomsQuantity.Name = "BadroomsQuantity";
             this.BadroomsQuantity.ReadOnly = true;
             this.BadroomsQuantity.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.BadroomsQuantity.Width = 200;
+            // 
+            // SizeM2
+            // 
+            this.SizeM2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.SizeM2.HeaderText = "Metragem (m²)";
+            this.SizeM2.Name = "SizeM2";
+            this.SizeM2.ReadOnly = true;
             // 
             // panel1
             // 
@@ -296,6 +309,11 @@
             this.txtCityId.BackColor = System.Drawing.SystemColors.Window;
             this.txtCityId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.txtCityId.Location = new System.Drawing.Point(16, 83);
+            this.txtCityId.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
             this.txtCityId.Name = "txtCityId";
             this.txtCityId.Size = new System.Drawing.Size(75, 26);
             this.txtCityId.TabIndex = 4;
@@ -355,12 +373,13 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.NumericUpDown txtCityId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Floor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BadroomsQuantity;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.LinkLabel btnEdit;
         private System.Windows.Forms.LinkLabel btnDelete;
         private System.Windows.Forms.LinkLabel btnAdd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Floor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BadroomsQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SizeM2;
     }
 }
