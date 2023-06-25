@@ -79,5 +79,30 @@ namespace DesktopAPP.View.Payment
             cmbApartment.DisplayMember = "DisplayName";
             cmbApartment.ValueMember = "Id";
         }
+
+        private async void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int buildingId = GetSelectedBuilding().Id;
+                int apartmentId = GetSelectedApartmentId();
+                if (IsInsert)
+                    await paymentService.Post(buildingId, apartmentId, payment);
+                else
+                    await paymentService.Update(payment);
+                this.Close();
+                this.DialogResult = DialogResult.OK;
+            }
+            catch (Exception ex)
+            {
+                this.DialogResult = DialogResult.Abort;
+                MessageBox.Show($"Falha ao {(IsInsert ? "Cadastrar" : "Atualizar")} Pagamento. \n{ex.Message}\n\n{ex.StackTrace}");
+            }
+        }
+
+        private int GetSelectedApartmentId()
+        {
+            return Convert.ToInt32(cmbApartment.SelectedValue);
+        }
     }
 }

@@ -32,5 +32,15 @@ namespace DesktopAPP.Services
         {
             await api.DeletePaymentAsync(id);
         }
+
+        public async Task Post(int buildingId, int apartmentId, PaymentModel payment)
+        {
+            await api.PostPaymentAsync(buildingId, apartmentId, payment);
+        }
+
+        public async Task Update(PaymentModel payment)
+        {
+            await api.UpdatePaymentAsync(payment);
+        }
     }
 }

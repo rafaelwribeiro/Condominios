@@ -59,5 +59,11 @@ namespace DesktopAPP.Services
 
         [Delete("/payments/{id}")]
         Task DeletePaymentAsync(int id);
+
+        [Post("/buildings/{buildingId}/apartments/{apartmentId}/condominiumpayments")]
+        Task PostPaymentAsync(int buildingId, int apartmentId, PaymentModel payment);
+
+        [Put("/payments")]
+        Task UpdatePaymentAsync(PaymentModel payment);
     }
 }
