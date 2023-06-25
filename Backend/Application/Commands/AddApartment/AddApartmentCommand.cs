@@ -6,8 +6,10 @@ namespace Backend.Application.Commands.AddApartment;
 public class AddApartmentCommand : IRequest<AddApartmentCommandResult>
 {
     public CreateApartmentContract Contract { get; set; }
-    public AddApartmentCommand(CreateApartmentContract contract)
+    public int BuildingId { get; set; }
+    public AddApartmentCommand(int buildingId, CreateApartmentContract contract)
     {
         Contract = contract;
+        BuildingId = buildingId;
     }
 }

@@ -40,8 +40,12 @@
             this.tabPageApartamentos = new System.Windows.Forms.TabPage();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Floor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BadroomsQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEdit = new System.Windows.Forms.LinkLabel();
+            this.btnDelete = new System.Windows.Forms.LinkLabel();
+            this.btnAdd = new System.Windows.Forms.LinkLabel();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCityName = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -52,6 +56,7 @@
             this.tabControl1.SuspendLayout();
             this.tabPageApartamentos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCityId)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,8 +68,8 @@
             this.txtName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(97, 31);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(683, 26);
-            this.txtName.TabIndex = 7;
+            this.txtName.Size = new System.Drawing.Size(279, 26);
+            this.txtName.TabIndex = 2;
             // 
             // label2
             // 
@@ -73,7 +78,7 @@
             this.label2.Location = new System.Drawing.Point(93, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 19);
-            this.label2.TabIndex = 6;
+            this.label2.TabIndex = 8;
             this.label2.Text = "Nome";
             // 
             // txtId
@@ -84,7 +89,7 @@
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(75, 26);
-            this.txtId.TabIndex = 5;
+            this.txtId.TabIndex = 1;
             // 
             // label1
             // 
@@ -93,7 +98,7 @@
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(25, 19);
-            this.label1.TabIndex = 4;
+            this.label1.TabIndex = 7;
             this.label1.Text = "ID";
             // 
             // txtFloors
@@ -101,16 +106,17 @@
             this.txtFloors.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFloors.BackColor = System.Drawing.SystemColors.Window;
             this.txtFloors.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.txtFloors.Location = new System.Drawing.Point(786, 31);
+            this.txtFloors.Location = new System.Drawing.Point(382, 32);
             this.txtFloors.Name = "txtFloors";
             this.txtFloors.Size = new System.Drawing.Size(75, 26);
-            this.txtFloors.TabIndex = 8;
+            this.txtFloors.TabIndex = 3;
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(782, 9);
+            this.label3.Location = new System.Drawing.Point(384, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 19);
             this.label3.TabIndex = 9;
@@ -125,17 +131,18 @@
             this.tabControl1.Location = new System.Drawing.Point(16, 114);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(845, 311);
-            this.tabControl1.TabIndex = 10;
+            this.tabControl1.Size = new System.Drawing.Size(445, 311);
+            this.tabControl1.TabIndex = 12;
             // 
             // tabPageApartamentos
             // 
             this.tabPageApartamentos.BackColor = System.Drawing.Color.Gainsboro;
             this.tabPageApartamentos.Controls.Add(this.dataGridView);
+            this.tabPageApartamentos.Controls.Add(this.panel1);
             this.tabPageApartamentos.Location = new System.Drawing.Point(4, 22);
             this.tabPageApartamentos.Name = "tabPageApartamentos";
             this.tabPageApartamentos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageApartamentos.Size = new System.Drawing.Size(837, 285);
+            this.tabPageApartamentos.Size = new System.Drawing.Size(437, 285);
             this.tabPageApartamentos.TabIndex = 0;
             this.tabPageApartamentos.Text = "Apartamentos";
             // 
@@ -148,15 +155,15 @@
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
-            this.Nome,
-            this.UF});
-            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView.Location = new System.Drawing.Point(3, 10);
+            this.Floor,
+            this.BadroomsQuantity});
+            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView.Location = new System.Drawing.Point(3, 19);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(831, 272);
-            this.dataGridView.TabIndex = 1;
+            this.dataGridView.Size = new System.Drawing.Size(431, 263);
+            this.dataGridView.TabIndex = 13;
             this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
             // 
             // Id
@@ -169,21 +176,72 @@
             this.Id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Id.Width = 50;
             // 
-            // Nome
+            // Floor
             // 
-            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
+            this.Floor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Floor.HeaderText = "Andar";
+            this.Floor.Name = "Floor";
+            this.Floor.ReadOnly = true;
+            this.Floor.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // UF
+            // BadroomsQuantity
             // 
-            this.UF.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.UF.HeaderText = "UF";
-            this.UF.Name = "UF";
-            this.UF.ReadOnly = true;
-            this.UF.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.UF.Width = 50;
+            this.BadroomsQuantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.BadroomsQuantity.HeaderText = "Quantidade de quartos";
+            this.BadroomsQuantity.Name = "BadroomsQuantity";
+            this.BadroomsQuantity.ReadOnly = true;
+            this.BadroomsQuantity.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.BadroomsQuantity.Width = 200;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnEdit);
+            this.panel1.Controls.Add(this.btnDelete);
+            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(431, 16);
+            this.panel1.TabIndex = 14;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.AutoSize = true;
+            this.btnEdit.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnEdit.Location = new System.Drawing.Point(129, 0);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.btnEdit.Size = new System.Drawing.Size(54, 13);
+            this.btnEdit.TabIndex = 2;
+            this.btnEdit.TabStop = true;
+            this.btnEdit.Text = "Editar";
+            this.btnEdit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.btnEdit_LinkClicked);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.AutoSize = true;
+            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnDelete.Location = new System.Drawing.Point(71, 0);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.btnDelete.Size = new System.Drawing.Size(58, 13);
+            this.btnDelete.TabIndex = 1;
+            this.btnDelete.TabStop = true;
+            this.btnDelete.Text = "Excluir";
+            this.btnDelete.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.btnDelete_LinkClicked);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.AutoSize = true;
+            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAdd.Location = new System.Drawing.Point(0, 0);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.btnAdd.Size = new System.Drawing.Size(71, 13);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.TabStop = true;
+            this.btnAdd.Text = "Adicionar";
+            this.btnAdd.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.btnAdd_LinkClicked);
             // 
             // label4
             // 
@@ -203,7 +261,7 @@
             this.txtCityName.Name = "txtCityName";
             this.txtCityName.ReadOnly = true;
             this.txtCityName.Size = new System.Drawing.Size(330, 26);
-            this.txtCityName.TabIndex = 12;
+            this.txtCityName.TabIndex = 5;
             // 
             // contextMenuStrip1
             // 
@@ -228,20 +286,19 @@
             this.btnSave.Location = new System.Drawing.Point(16, 431);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 16;
+            this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Salvar";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtCityId
             // 
-            this.txtCityId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCityId.BackColor = System.Drawing.SystemColors.Window;
             this.txtCityId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.txtCityId.Location = new System.Drawing.Point(16, 83);
             this.txtCityId.Name = "txtCityId";
             this.txtCityId.Size = new System.Drawing.Size(75, 26);
-            this.txtCityId.TabIndex = 17;
+            this.txtCityId.TabIndex = 4;
             this.txtCityId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCityId_KeyPress);
             // 
             // EditBuildingForm
@@ -249,7 +306,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(873, 464);
+            this.ClientSize = new System.Drawing.Size(473, 464);
             this.Controls.Add(this.txtCityId);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnSearch);
@@ -273,6 +330,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPageApartamentos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCityId)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -290,14 +349,18 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPageApartamentos;
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UF;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCityName;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.NumericUpDown txtCityId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Floor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BadroomsQuantity;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.LinkLabel btnEdit;
+        private System.Windows.Forms.LinkLabel btnDelete;
+        private System.Windows.Forms.LinkLabel btnAdd;
     }
 }

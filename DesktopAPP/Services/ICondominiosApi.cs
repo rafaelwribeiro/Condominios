@@ -36,6 +36,20 @@ namespace DesktopAPP.Services
 
         [Delete("/buildings/{id}")]
         Task DeleteBuildingAsync(int id);
-        
+
+        //Apartments
+        [Get("/buildings/{buildingId}/apartments")]
+        Task<IList<ApartmentModel>> GetAllApartmentAsync(int buildingId);
+
+        [Post("/buildings/{buildingId}/apartments")]
+        Task<ApartmentModel> PostApartmentAsync(int buildingId, ApartmentModel building);
+
+        [Put("/buildings/{buildingId}/apartments")]
+        Task UpdateApartmentAsync(int buildingId, ApartmentModel building);
+
+        [Delete("/buildings/{buildingId}/apartments/{id}")]
+        Task DeleteApartmentAsync(int buildingId, int id);
+        [Get("/buildings/{buildingId}/apartments/{id}")]
+        Task<ApartmentModel> GetApartmentAsync(int buildingId, int id);
     }
 }

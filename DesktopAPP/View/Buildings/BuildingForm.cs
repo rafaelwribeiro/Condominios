@@ -27,8 +27,8 @@ namespace DesktopAPP.View.Buildings
         {
             var building = buildings.FirstOrDefault(x => x.Id == id);
             var frmEdit = new EditBuildingForm(building);
-            if (frmEdit.ShowDialog() == DialogResult.OK)
-                await PopulateGrid();
+            frmEdit.ShowDialog();
+            await PopulateGrid();
         }
 
         private async void BuildingForm_Load(object sender, EventArgs e)

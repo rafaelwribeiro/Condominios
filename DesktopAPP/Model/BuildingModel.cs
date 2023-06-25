@@ -10,6 +10,6 @@ namespace DesktopAPP.Model
         public int Floors { get; set; }
         public int CityId { get; set; }
         public CityModel City { get; set; }
-        //public IEnumerable<ApartmentModel> Apartments { get; set; } = Enumerable.Empty<ApartmentModel>();
+        public IList<ApartmentModel> Apartments { get; set; } = Enumerable.Empty<ApartmentModel>().ToList();
     }
 }

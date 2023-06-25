@@ -19,6 +19,7 @@ public class AddApartmentCommandHandler : IRequestHandler<AddApartmentCommand, A
     {
 
         var entity = request.Contract.Adapt<Apartment>();
+        entity.BuildingId = request.BuildingId;
         var building = await _apartmentRepository.AddAsync(entity);
         var result = new AddApartmentCommandResult();
         result.Apartment = building.Adapt<ReadApartmentContract>();

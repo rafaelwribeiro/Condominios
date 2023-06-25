@@ -1,13 +1,8 @@
 using Backend.Application.Commands.AddApartment;
-using Backend.Application.Commands.AddBuilding;
 using Backend.Application.Commands.GetApartment;
-using Backend.Application.Commands.GetBuilding;
 using Backend.Application.Commands.ListApartments;
-using Backend.Application.Commands.ListBuildings;
 using Backend.Application.Commands.RemoveApartment;
-using Backend.Application.Commands.RemoveBuilding;
 using Backend.Application.Commands.UpdateApartment;
-using Backend.Application.Commands.UpdateBuilding;
 using Backend.Application.Contracts;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -16,11 +11,11 @@ namespace Backend.Api.Controllers;
 
 [ApiController]
 [Route("buildings/{buildingId}/[controller]")]
-public class ApartmentController : ControllerBase
+public class ApartmentsController : ControllerBase
 {
     private readonly IMediator _mediator;
 
-    public ApartmentController(IMediator mediator)
+    public ApartmentsController(IMediator mediator)
     {
         _mediator = mediator;
     }
@@ -43,9 +38,9 @@ public class ApartmentController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create(int buildingId, CreateApartmentContract contract)
     {
-        var result = await _mediator.Send(new AddApartmentCommand(contract));
+        var result = await _mediator.Send(new AddApartmentCommand(buildingId, contract));
         var apartment = result.Apartment;
-        return CreatedAtRoute("ApartmentDetails", new { Id = apartment?.Id }, apartment);
+        return CreatedAtRoute("ApartmentDetails", new {buildingId = apartment?.BuildingId, id = apartment?.Id }, apartment);
     }
 
     [HttpPut]
