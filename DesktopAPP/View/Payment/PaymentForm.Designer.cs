@@ -144,7 +144,6 @@
             this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
-            this.Id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Id.Width = 50;
             // 
             // Nome
@@ -160,7 +159,6 @@
             this.CreatedAt.HeaderText = "Data";
             this.CreatedAt.Name = "CreatedAt";
             this.CreatedAt.ReadOnly = true;
-            this.CreatedAt.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // ApartmentId
             // 
@@ -168,7 +166,6 @@
             this.ApartmentId.HeaderText = "Apartamento";
             this.ApartmentId.Name = "ApartmentId";
             this.ApartmentId.ReadOnly = true;
-            this.ApartmentId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Value
             // 
@@ -176,7 +173,6 @@
             this.Value.HeaderText = "Valor";
             this.Value.Name = "Value";
             this.Value.ReadOnly = true;
-            this.Value.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // PaymentForm
             // 

@@ -11,5 +11,6 @@ namespace DesktopAPP.Model
         public int CityId { get; set; }
         public CityModel City { get; set; }
         public IList<ApartmentModel> Apartments { get; set; } = Enumerable.Empty<ApartmentModel>().ToList();
+        public string DisplayName => $"{Id} - {Name}";
     }
 }

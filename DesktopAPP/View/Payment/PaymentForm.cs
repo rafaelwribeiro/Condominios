@@ -37,7 +37,7 @@ namespace DesktopAPP.View.Payment
             payments
                 .ToList()
                 .ForEach(p => {
-                    dataGridView.Rows.Add(p.Id, "", p.CreatedAt, p.ApartamentId, p.Value);
+                    dataGridView.Rows.Add(p.Id, p.Apartment.Building.DisplayName, p.CreatedAt, p.ApartmentId, p.Value);
                 }
             );
         }
