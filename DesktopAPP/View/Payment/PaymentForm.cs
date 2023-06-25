@@ -62,16 +62,22 @@ namespace DesktopAPP.View.Payment
 
         private async void btnDelete_Click(object sender, EventArgs e)
         {
-            int id = GetIdSelectedRow();
-            if (id <= 0) return;
-            DialogResult result = MessageBox.Show("Deseja excluir o registro selecionado?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            try
+            {
+                int id = GetIdSelectedRow();
+                if (id <= 0) return;
+                DialogResult result = MessageBox.Show("Deseja excluir o registro selecionado?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (result == DialogResult.No)
-                return;
+                if (result == DialogResult.No)
+                    return;
 
 
-            await paymentService.Delete(id);
-            await PopulateGrid();
+                await paymentService.Delete(id);
+                await PopulateGrid();
+            } catch(Exception ex)
+            {
+                MessageBox.Show($"Falha ao tentar excluir registro. \n{ex.Message} \n\n {ex.StackTrace}");
+            }
         }
 
         private int GetIdSelectedRow()

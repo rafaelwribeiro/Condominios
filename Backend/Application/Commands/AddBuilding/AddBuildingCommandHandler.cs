@@ -19,6 +19,7 @@ public class AddBuildingCommandHandler : IRequestHandler<AddBuildingCommand, Add
     {
         var entity = request.Contract.Adapt<Building>();
         var building = await _buildingRepository.AddAsync(entity);
+        Console.WriteLine($"Cidade: {building.CityId}  nome: {building.Name}");
         var result = new AddBuildingCommandResult();
         result.Building = building.Adapt<ReadBuildingContract>();
         return result;

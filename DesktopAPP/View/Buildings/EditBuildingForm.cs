@@ -56,7 +56,8 @@ namespace DesktopAPP.View.Buildings
         private void FillCityFields(CityModel city)
         {
             txtCityId.Text = city.Id.ToString();
-            txtCityName.Text = city.Name.ToString();
+            txtCityName.Text = city.Name;
+            building.CityId= city.Id;
         }
 
         private void EditBuildingForm_Load(object sender, EventArgs e)
@@ -116,7 +117,7 @@ namespace DesktopAPP.View.Buildings
                 this.DialogResult = DialogResult.OK;
             } catch (Exception ex)
             {
-                MessageBox.Show($"Falha ao salvar dados do Edifício.\n{ex.Message}\n{ex.InnerException}");
+                MessageBox.Show($"Falha ao salvar dados do Edifício.\n{ex.Message}\n\n{ex.StackTrace}");
             }
         }
 

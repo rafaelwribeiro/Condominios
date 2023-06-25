@@ -15,9 +15,15 @@ namespace DesktopAPP
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            try
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new MainForm());
+            } catch (Exception ex)
+            {
+                MessageBox.Show($"Fatal Error.\n{ex.Message}\n\n{ex.StackTrace}");
+            }
         }
     }
 }
