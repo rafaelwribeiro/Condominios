@@ -31,20 +31,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.pnlMasterContainer = new System.Windows.Forms.Panel();
             this.pnlBody = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnBuilding = new System.Windows.Forms.Button();
             this.btnCities = new System.Windows.Forms.Button();
             this.pnlLogo = new System.Windows.Forms.Panel();
+            this.btnPayments = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlMasterContainer.SuspendLayout();
             this.pnlBody.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlHeader.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             this.pnlLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,21 +64,10 @@
             this.pnlBody.BackColor = System.Drawing.Color.Gainsboro;
             this.pnlBody.Controls.Add(this.pictureBox2);
             this.pnlBody.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlBody.Location = new System.Drawing.Point(0, 45);
+            this.pnlBody.Location = new System.Drawing.Point(0, 66);
             this.pnlBody.Name = "pnlBody";
-            this.pnlBody.Size = new System.Drawing.Size(695, 549);
+            this.pnlBody.Size = new System.Drawing.Size(695, 528);
             this.pnlBody.TabIndex = 1;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(245, 198);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(222, 138);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
             // 
             // pnlHeader
             // 
@@ -86,24 +76,25 @@
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(695, 45);
+            this.pnlHeader.Size = new System.Drawing.Size(695, 66);
             this.pnlHeader.TabIndex = 0;
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Font = new System.Drawing.Font("Arial", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblTitle.Location = new System.Drawing.Point(6, 9);
+            this.lblTitle.Location = new System.Drawing.Point(21, 23);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(64, 24);
+            this.lblTitle.Size = new System.Drawing.Size(113, 40);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Home";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.RoyalBlue;
+            this.pnlMenu.Controls.Add(this.btnPayments);
             this.pnlMenu.Controls.Add(this.btnBuilding);
             this.pnlMenu.Controls.Add(this.btnCities);
             this.pnlMenu.Controls.Add(this.pnlLogo);
@@ -156,6 +147,34 @@
             this.pnlLogo.Size = new System.Drawing.Size(220, 140);
             this.pnlLogo.TabIndex = 0;
             // 
+            // btnPayments
+            // 
+            this.btnPayments.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPayments.FlatAppearance.BorderSize = 0;
+            this.btnPayments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPayments.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPayments.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnPayments.Location = new System.Drawing.Point(0, 240);
+            this.btnPayments.Name = "btnPayments";
+            this.btnPayments.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnPayments.Size = new System.Drawing.Size(220, 50);
+            this.btnPayments.TabIndex = 3;
+            this.btnPayments.Text = "Pagamentos";
+            this.btnPayments.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPayments.UseVisualStyleBackColor = true;
+            this.btnPayments.Click += new System.EventHandler(this.btnPayments_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(245, 188);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(222, 138);
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
@@ -182,11 +201,11 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.pnlMasterContainer.ResumeLayout(false);
             this.pnlBody.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             this.pnlMenu.ResumeLayout(false);
             this.pnlLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -203,5 +222,6 @@
         private System.Windows.Forms.Button btnCities;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnBuilding;
+        private System.Windows.Forms.Button btnPayments;
     }
 }

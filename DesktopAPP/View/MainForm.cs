@@ -1,5 +1,6 @@
 ﻿using DesktopAPP.View.Buildings;
 using DesktopAPP.View.City;
+using DesktopAPP.View.Payment;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -15,7 +16,7 @@ namespace DesktopAPP.View
             pnlMasterContainer.BringToFront();
         }
 
-        private void OpenChiledForm(Form childForm)
+        private void OpenChieldForm(Form childForm)
         {
             currentChieldForm?.Close();
             currentChieldForm = childForm;
@@ -53,12 +54,17 @@ namespace DesktopAPP.View
 
         private void btnCities_Click(object sender, EventArgs e)
         {
-            OpenChiledForm(new CityForm());
+            OpenChieldForm(new CityForm());
         }
 
         private void btnBuilding_Click(object sender, EventArgs e)
         {
-            OpenChiledForm(new BuildingForm());
+            OpenChieldForm(new BuildingForm());
+        }
+
+        private void btnPayments_Click(object sender, EventArgs e)
+        {
+            OpenChieldForm(new PaymentForm());
         }
     }
 }

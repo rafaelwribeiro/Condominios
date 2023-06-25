@@ -1,16 +1,17 @@
 using Backend.Application.Commands.GetCondominiumPaymentRanking;
+using Backend.Application.Commands.ListPayments;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Backend.Api.Controllers;
 
 [ApiController]
-[Route("Buildings/{buildingId}/Apartment/{apartmentId}/[controller]")]
-public class CondominiumPaymentController : ControllerBase
+[Route("buildings/{buildingId}/Apartments/{apartmentId}/[controller]")]
+public class CondominiumPaymentsController : ControllerBase
 {
     private readonly IMediator _mediator;
 
-    public CondominiumPaymentController(IMediator mediator)
+    public CondominiumPaymentsController(IMediator mediator)
     {
         _mediator = mediator;
     }
@@ -18,7 +19,8 @@ public class CondominiumPaymentController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetAll(int buildingId, int apartmentId)
     {
-        return Ok("");
+        var result = await _mediator.Send(new ListPaymentsCommand(buildingId, apartmentId));
+        return Ok(result.Payments);
     }
     
 }

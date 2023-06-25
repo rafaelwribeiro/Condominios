@@ -23,6 +23,7 @@ public class ApartmentRepository : IApartmentRepository
         return await _dbContext
             .Apartaments
             .Include(a => a.Building)
+                .ThenInclude(b => b.City)
             .Where(a => a.BuildingId == buildingId)
             .AsNoTracking()
             .ToListAsync();

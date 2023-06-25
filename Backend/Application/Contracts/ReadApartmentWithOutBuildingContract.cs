@@ -1,10 +1,9 @@
 namespace Backend.Application.Contracts;
 
-public class ReadApartmentContract
+public class ReadApartmentWithOutBuildingContract
 {
     public int Id { get; set; }
     public int Floor { get; set; }
     public int BadroomsQuantity { get; set; }
     public int BuildingId { get; set; }
-    public ReadBuildingWithOutApartmentContract Building { get; set; }
 }

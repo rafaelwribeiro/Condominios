@@ -16,10 +16,19 @@ public class ListCitiesCommandHandler : IRequestHandler<ListApartmentsCommand, L
     
     public async Task<ListApartmentsCommandResult> Handle(ListApartmentsCommand request, CancellationToken cancellationToken)
     {
+        Console.WriteLine($"BuildingId: {request.BuildingId}");
         var list = await _apartmentRepository.GetAllAsync(request.BuildingId);
+        Console.WriteLine($"list: {list}");
+        if(list == null)
+            throw NotFoundException();
 
         var result = new ListApartmentsCommandResult();
         result.Apartments = list.Adapt<IList<ReadApartmentContract>>();
         return result;
+    }
+
+    private Exception NotFoundException()
+    {
+        throw new NotImplementedException();
     }
 }
