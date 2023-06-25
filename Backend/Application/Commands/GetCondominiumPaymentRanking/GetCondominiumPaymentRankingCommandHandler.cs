@@ -1,5 +1,6 @@
 using Backend.Application.Contracts;
 using Backend.Application.Exceptions;
+using Backend.Domain.Report;
 using Backend.Domain.Repositories;
 using Mapster;
 using MediatR;
@@ -20,7 +21,7 @@ public class GetCondominiumPaymentRankingCommandHandler : IRequestHandler<GetCon
         var list = await _reportRepository.ExecuteStoredProcPaymentRank(request.Contract.start, request.Contract.final);
 
         var result = new GetCondominiumPaymentRankingCommandResult();
-        result.List = list;
+        result.List = list ?? new List<CondominiumPaymentRankingReport>();
         return result;
     }
 }

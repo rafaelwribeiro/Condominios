@@ -31,21 +31,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.pnlMasterContainer = new System.Windows.Forms.Panel();
             this.pnlBody = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnPayments = new System.Windows.Forms.Button();
             this.btnBuilding = new System.Windows.Forms.Button();
             this.btnCities = new System.Windows.Forms.Button();
             this.pnlLogo = new System.Windows.Forms.Panel();
-            this.btnPayments = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnPaymentRanking = new System.Windows.Forms.Button();
             this.pnlMasterContainer.SuspendLayout();
             this.pnlBody.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlHeader.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             this.pnlLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +69,17 @@
             this.pnlBody.Name = "pnlBody";
             this.pnlBody.Size = new System.Drawing.Size(695, 528);
             this.pnlBody.TabIndex = 1;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(245, 188);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(222, 138);
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
             // pnlHeader
             // 
@@ -94,6 +106,7 @@
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.RoyalBlue;
+            this.pnlMenu.Controls.Add(this.btnPaymentRanking);
             this.pnlMenu.Controls.Add(this.btnPayments);
             this.pnlMenu.Controls.Add(this.btnBuilding);
             this.pnlMenu.Controls.Add(this.btnCities);
@@ -103,6 +116,23 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(220, 594);
             this.pnlMenu.TabIndex = 4;
+            // 
+            // btnPayments
+            // 
+            this.btnPayments.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPayments.FlatAppearance.BorderSize = 0;
+            this.btnPayments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPayments.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPayments.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnPayments.Location = new System.Drawing.Point(0, 240);
+            this.btnPayments.Name = "btnPayments";
+            this.btnPayments.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnPayments.Size = new System.Drawing.Size(220, 50);
+            this.btnPayments.TabIndex = 3;
+            this.btnPayments.Text = "Pagamentos";
+            this.btnPayments.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPayments.UseVisualStyleBackColor = true;
+            this.btnPayments.Click += new System.EventHandler(this.btnPayments_Click);
             // 
             // btnBuilding
             // 
@@ -147,34 +177,6 @@
             this.pnlLogo.Size = new System.Drawing.Size(220, 140);
             this.pnlLogo.TabIndex = 0;
             // 
-            // btnPayments
-            // 
-            this.btnPayments.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPayments.FlatAppearance.BorderSize = 0;
-            this.btnPayments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPayments.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPayments.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnPayments.Location = new System.Drawing.Point(0, 240);
-            this.btnPayments.Name = "btnPayments";
-            this.btnPayments.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnPayments.Size = new System.Drawing.Size(220, 50);
-            this.btnPayments.TabIndex = 3;
-            this.btnPayments.Text = "Pagamentos";
-            this.btnPayments.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPayments.UseVisualStyleBackColor = true;
-            this.btnPayments.Click += new System.EventHandler(this.btnPayments_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(245, 188);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(222, 138);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
@@ -185,6 +187,23 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // btnPaymentRanking
+            // 
+            this.btnPaymentRanking.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPaymentRanking.FlatAppearance.BorderSize = 0;
+            this.btnPaymentRanking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPaymentRanking.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPaymentRanking.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnPaymentRanking.Location = new System.Drawing.Point(0, 290);
+            this.btnPaymentRanking.Name = "btnPaymentRanking";
+            this.btnPaymentRanking.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnPaymentRanking.Size = new System.Drawing.Size(220, 50);
+            this.btnPaymentRanking.TabIndex = 4;
+            this.btnPaymentRanking.Text = "Ranking de pagamentos";
+            this.btnPaymentRanking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPaymentRanking.UseVisualStyleBackColor = true;
+            this.btnPaymentRanking.Click += new System.EventHandler(this.btnPaymentRanking_Click);
             // 
             // MainForm
             // 
@@ -201,11 +220,11 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.pnlMasterContainer.ResumeLayout(false);
             this.pnlBody.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             this.pnlMenu.ResumeLayout(false);
             this.pnlLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -223,5 +242,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnBuilding;
         private System.Windows.Forms.Button btnPayments;
+        private System.Windows.Forms.Button btnPaymentRanking;
     }
 }

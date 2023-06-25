@@ -21,7 +21,7 @@ public class ReportController : ControllerBase
         _mediator = mediator;
     }
 
-    [HttpGet("start={start}&finish={finish}")]
+    [HttpGet("{start}/{finish}")]
     public async Task<IActionResult> GetCondominiumPaymentRanking(DateTime start, DateTime finish)
     {
         CondominiumPaymentRankingContract contract = new CondominiumPaymentRankingContract();

@@ -1,5 +1,6 @@
 ﻿using DesktopAPP.Model;
 using Refit;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -65,5 +66,9 @@ namespace DesktopAPP.Services
 
         [Put("/payments")]
         Task UpdatePaymentAsync(PaymentModel payment);
+
+        //Report
+        [Get("/report/{start}/{finish}")]
+        Task<IList<PaymentRankingReportModel>> GetCondominiumPaymentRanking(string start, string finish);
     }
 }
