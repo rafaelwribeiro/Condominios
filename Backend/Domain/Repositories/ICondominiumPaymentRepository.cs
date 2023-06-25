@@ -9,4 +9,5 @@ public interface ICondominiumPaymentRepository
     public Task UpdateAsync(CondominiumPayment entity);
     public Task<CondominiumPayment?> GetAsync(int id);
     public Task<IEnumerable<CondominiumPayment>> GetAllAsync(int apartmentId);
+    public Task<IEnumerable<CondominiumPayment>> GetAllAsync();
 }

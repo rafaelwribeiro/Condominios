@@ -29,6 +29,17 @@ public class CondominiumPaymentRepository : ICondominiumPaymentRepository
             .ToListAsync();
     }
 
+    public async Task<IEnumerable<CondominiumPayment>> GetAllAsync()
+    {
+        return await _dbContext
+            .CondominiumPayments
+            .Include(a => a.Apartment)
+                .ThenInclude(b => b.Building)
+                    .ThenInclude(c => c.City)
+            .AsNoTracking()
+            .ToListAsync();
+    }
+
     public async Task<CondominiumPayment?> GetAsync(int id)
     {
         return await _dbContext

@@ -49,7 +49,15 @@ namespace DesktopAPP.Services
 
         [Delete("/buildings/{buildingId}/apartments/{id}")]
         Task DeleteApartmentAsync(int buildingId, int id);
+        
         [Get("/buildings/{buildingId}/apartments/{id}")]
         Task<ApartmentModel> GetApartmentAsync(int buildingId, int id);
+        
+        //Payments
+        [Get("/payments")]
+        Task<IList<PaymentModel>> GetAllPaymentsAsync();
+
+        [Delete("/payments/{id}")]
+        Task DeletePaymentAsync(int id);
     }
 }

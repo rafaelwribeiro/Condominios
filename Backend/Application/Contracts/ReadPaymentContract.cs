@@ -6,4 +6,5 @@ public class ReadPaymentContract
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public decimal Value { get; set; }
     public int ApartamentId { get; set; }
+    public ReadApartmentContract Apartment { get; set; }
 }
