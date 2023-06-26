@@ -1,5 +1,6 @@
 ﻿using DesktopAPP.View.Buildings;
 using DesktopAPP.View.City;
+using DesktopAPP.View.Exercises;
 using DesktopAPP.View.Payment;
 using DesktopAPP.View.Ranking;
 using System;
@@ -71,6 +72,11 @@ namespace DesktopAPP.View
         private void btnPaymentRanking_Click(object sender, EventArgs e)
         {
             OpenChieldForm(new RankingForm());
+        }
+
+        private void btnExercises_Click(object sender, EventArgs e)
+        {
+            OpenChieldForm(new ExercicesForm());
         }
     }
 }

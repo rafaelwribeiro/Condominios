@@ -1,0 +1,10 @@
+ Triggers de banco de dados são processos/funções que são executadas automaticamente em resposta a gatilhos programados na estrutura de banco de dados.
+ Por exemplo, é possivel programar para que ao inserir um registro na tabela TITULO_MOVIMENTOS, seja feito um update na coluna SALDO ta tabela TITULO equivalente a este movimento.
+ 
+ Normamente, na programação destas tiggres é possível ter acesso aos dados antigos e os dados novos em caso de trigger disparadas por ações de updates.
+ 
+ As Triggers podem ser acionadas por açoes de INSERT, UPDATE e DELETE.
+ 
+ Em geral, as triggers podem oferecer mais integridade ao banco de dados se usadas de forma cuidadosa, caso contrário elas podem gerar gargalo na utilização do banco de dados.
+ Podem ser utilizadas em casos em que se busca mais desempenho, uma vez que a trigger é executada diretamente no banco de dados e não há o fator de transitar informações pela rede,
+ porém por outro lado, implica em separar algumas partes da implementação das regras de negócio em diferentes fontes, tornando o entendimento geral da codificação do sistema mais complexa.

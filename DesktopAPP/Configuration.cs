@@ -39,7 +39,6 @@ namespace DesktopAPP
         {
             if (File.Exists(path)) return;
             File.WriteAllText(path, $"{API_PATH}=http://localhost:5106");
-            //File.Create(path).Dispose();
         }
 
         public static Configuration GetInstance()

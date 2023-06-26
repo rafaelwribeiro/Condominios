@@ -14,6 +14,3 @@
 - Api
   - Controllers
   - Middlewares
-
-
-Domain

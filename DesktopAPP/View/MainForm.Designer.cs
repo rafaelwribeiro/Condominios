@@ -35,12 +35,13 @@
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnPaymentRanking = new System.Windows.Forms.Button();
             this.btnPayments = new System.Windows.Forms.Button();
             this.btnBuilding = new System.Windows.Forms.Button();
             this.btnCities = new System.Windows.Forms.Button();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnPaymentRanking = new System.Windows.Forms.Button();
+            this.btnExercises = new System.Windows.Forms.Button();
             this.pnlMasterContainer.SuspendLayout();
             this.pnlBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -106,6 +107,7 @@
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.RoyalBlue;
+            this.pnlMenu.Controls.Add(this.btnExercises);
             this.pnlMenu.Controls.Add(this.btnPaymentRanking);
             this.pnlMenu.Controls.Add(this.btnPayments);
             this.pnlMenu.Controls.Add(this.btnBuilding);
@@ -116,6 +118,23 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(220, 594);
             this.pnlMenu.TabIndex = 4;
+            // 
+            // btnPaymentRanking
+            // 
+            this.btnPaymentRanking.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPaymentRanking.FlatAppearance.BorderSize = 0;
+            this.btnPaymentRanking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPaymentRanking.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPaymentRanking.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnPaymentRanking.Location = new System.Drawing.Point(0, 290);
+            this.btnPaymentRanking.Name = "btnPaymentRanking";
+            this.btnPaymentRanking.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnPaymentRanking.Size = new System.Drawing.Size(220, 50);
+            this.btnPaymentRanking.TabIndex = 4;
+            this.btnPaymentRanking.Text = "Ranking de pagamentos";
+            this.btnPaymentRanking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPaymentRanking.UseVisualStyleBackColor = true;
+            this.btnPaymentRanking.Click += new System.EventHandler(this.btnPaymentRanking_Click);
             // 
             // btnPayments
             // 
@@ -188,22 +207,22 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // btnPaymentRanking
+            // btnExercises
             // 
-            this.btnPaymentRanking.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPaymentRanking.FlatAppearance.BorderSize = 0;
-            this.btnPaymentRanking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPaymentRanking.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPaymentRanking.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnPaymentRanking.Location = new System.Drawing.Point(0, 290);
-            this.btnPaymentRanking.Name = "btnPaymentRanking";
-            this.btnPaymentRanking.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnPaymentRanking.Size = new System.Drawing.Size(220, 50);
-            this.btnPaymentRanking.TabIndex = 4;
-            this.btnPaymentRanking.Text = "Ranking de pagamentos";
-            this.btnPaymentRanking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPaymentRanking.UseVisualStyleBackColor = true;
-            this.btnPaymentRanking.Click += new System.EventHandler(this.btnPaymentRanking_Click);
+            this.btnExercises.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnExercises.FlatAppearance.BorderSize = 0;
+            this.btnExercises.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExercises.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExercises.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnExercises.Location = new System.Drawing.Point(0, 340);
+            this.btnExercises.Name = "btnExercises";
+            this.btnExercises.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnExercises.Size = new System.Drawing.Size(220, 50);
+            this.btnExercises.TabIndex = 5;
+            this.btnExercises.Text = "Atividades";
+            this.btnExercises.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExercises.UseVisualStyleBackColor = true;
+            this.btnExercises.Click += new System.EventHandler(this.btnExercises_Click);
             // 
             // MainForm
             // 
@@ -243,5 +262,6 @@
         private System.Windows.Forms.Button btnBuilding;
         private System.Windows.Forms.Button btnPayments;
         private System.Windows.Forms.Button btnPaymentRanking;
+        private System.Windows.Forms.Button btnExercises;
     }
 }

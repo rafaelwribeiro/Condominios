@@ -106,6 +106,12 @@
     <Compile Include="View\City\EditCityForm.Designer.cs">
       <DependentUpon>EditCityForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Exercises\ExercicesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Exercises\ExercicesForm.Designer.cs">
+      <DependentUpon>ExercicesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\City\EditCityForm.resx">
       <DependentUpon>EditCityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Exercises\ExercicesForm.resx">
+      <DependentUpon>ExercicesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
