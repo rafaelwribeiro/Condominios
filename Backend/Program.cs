@@ -1,6 +1,7 @@
 using System.Reflection;
 using Backend.Api.Middlewares;
 using Backend.Domain.Repositories;
+using Backend.Application.Interfaces;
 using Backend.Infra.Data.EFCore;
 using Backend.Infra.Data.EFCore.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -35,6 +36,7 @@ builder.Services.AddScoped<IBuildingRepository, BuildingRepository>();
 builder.Services.AddScoped<IApartmentRepository, ApartmentRepository>();
 builder.Services.AddScoped<ICondominiumPaymentRepository, CondominiumPaymentRepository>();
 builder.Services.AddScoped<IReportRepository, ReportRepository>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var app = builder.Build();
 

@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Backend.Domain.Entities;
 using Backend.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -14,7 +15,6 @@ public class ApartmentRepository : IApartmentRepository
     public async Task<Apartment> AddAsync(Apartment apartment)
     {
         await _dbContext.Apartaments.AddAsync(apartment);
-        await _dbContext.SaveChangesAsync();
         return apartment;
     }
 
@@ -38,15 +38,15 @@ public class ApartmentRepository : IApartmentRepository
             .FirstOrDefaultAsync();
     }
 
-    public async Task RemoveAsync(Apartment apartment)
+    public Task RemoveAsync(Apartment apartment)
     {
         _dbContext.Apartaments.Remove(apartment);
-        await _dbContext.SaveChangesAsync();
+        return Task.CompletedTask;
     }
 
-    public async Task UpdateAsync(Apartment apartment)
+    public Task UpdateAsync(Apartment apartment)
     {
         _dbContext.Apartaments.Update(apartment);
-        await _dbContext.SaveChangesAsync();
+        return Task.CompletedTask;
     }
 }
